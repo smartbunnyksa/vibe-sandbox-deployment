@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>بصمة لاعب — وليّ الأمر</title>
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-theme="light">
+<div class="layout container">
+  <aside>
+    <div class="brand">
+      <div class="brand-logo"><img src="assets/images/logo-dark.svg" alt="بصمة لاعب" loading="lazy"></div>
+      <h1>بصمة لاعب</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a class="active" href="#overview">نظرة عامة</a></li>
+        <li><a href="#children">أبنائي</a></li>
+        <li><a href="#schedule">الجدول</a></li>
+        <li><a href="#payments">المدفوعات</a></li>
+        <li><a href="#messages">الرسائل والإعلانات</a></li>
+        <li><a href="#support">مركز خدمة العملاء</a></li>
+        <li><a href="#settings">الإعدادات</a></li>
+      </ul>
+    </nav>
+    <a class="logout" href="./index.html">تسجيل الخروج</a>
+  </aside>
+
+  <main>
+    <header>
+      <div class="header-title">نظرة عامة</div>
+      <div class="header-actions">
+        <button id="btn-theme" class="btn secondary">تبديل الثيم</button>
+      </div>
+    </header>
+
+    <section id="overview" class="page">
+      <div class="content">
+        <div class="kpis">
+          <div class="card kpi"><div class="icon">👦</div><div class="meta"><span id="kpi-pa-kids" class="value">2</span><span class="label">عدد الأبناء</span></div></div>
+          <div class="card kpi"><div class="icon">📅</div><div class="meta"><span id="kpi-pa-upcoming" class="value">5</span><span class="label">جلسات قادمة</span></div></div>
+          <div class="card kpi kpi-primary"><div class="icon">﷼</div><div class="meta"><span id="kpi-pa-due" class="value">1,200 ر.س</span><span class="label">مستحقات</span></div></div>
+        </div>
+
+        <div class="grid">
+          <div class="card table-card">
+            <div class="title-row"><h3 class="chart-title">ملخص الأبناء</h3></div>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>الاسم</th><th>المجموعة</th><th>آخر تقييم</th><th>الحضور</th><th>إجراء</th></tr></thead>
+                <tbody id="tbl-parent-kids">
+                  <tr><td>محمد</td><td>الناشئين أ</td><td>4.5/5</td><td>92%</td><td><button class="btn small">التفاصيل</button></td></tr>
+                  <tr><td>أحمد</td><td>المبتدئين</td><td>4.2/5</td><td>85%</td><td><button class="btn small">التفاصيل</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="chart-title">تنبيهات</h3>
+            <ul class="bullets" id="parent-alerts">
+              <li>جلسة تدريبية غداً الساعة 5:00 م لمحمد</li>
+              <li>دفع الاشتراك الشهري مستحق</li>
+              <li>تقييم جديد متاح لأحمد</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="children" class="page" style="display:none">
+      <div class="content">
+        <div class="card">
+          <h3 class="chart-title">أبنائي</h3>
+          <div class="grid">
+            <div class="card">
+              <h4>محمد</h4>
+              <ul class="bullets">
+                <li>العمر: 14 سنة</li>
+                <li>المجموعة: الناشئين أ</li>
+                <li>المدرب: أحمد السعدي</li>
+                <li>معدل الحضور: 92%</li>
+                <li>آخر تقييم: 4.5/5</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>أحمد</h4>
+              <ul class="bullets">
+                <li>العمر: 12 سنة</li>
+                <li>المجموعة: المبتدئين</li>
+                <li>المدرب: سعيد الحربي</li>
+                <li>معدل الحضور: 85%</li>
+                <li>آخر تقييم: 4.2/5</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="page" style="display:none">
+      <div class="content">
+        <div class="card">
+          <h3 class="chart-title">الجدول الأسبوعي</h3>
+          <div class="grid">
+            <div class="card">
+              <h4>محمد - الناشئين أ</h4>
+              <ul class="bullets">
+                <li>الأحد: 5:00 م - تدريب مهارات</li>
+                <li>الثلاثاء: 5:00 م - تدريب بدني</li>
+                <li>الخميس: 5:00 م - مباراة تدريبية</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>أحمد - المبتدئين</h4>
+              <ul class="bullets">
+                <li>الأحد: 3:30 م - تدريب أساسي</li>
+                <li>الثلاثاء: 3:30 م - ألعاب تدريبية</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="payments" class="page" style="display:none">
+      <div class="content">
+        <div class="card">
+          <h3 class="chart-title">المدفوعات والاشتراكات</h3>
+          <div class="grid">
+            <div class="card">
+              <h4>الاشتراكات الحالية</h4>
+              <ul class="bullets">
+                <li>محمد: 600 ر.س/شهر</li>
+                <li>أحمد: 600 ر.س/شهر</li>
+                <li>الإجمالي: 1,200 ر.س/شهر</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>حالة المدفوعات</h4>
+              <ul class="bullets">
+                <li>آخر دفعة: 2024-04-01 (1,200 ر.س)</li>
+                <li>المستحقات: 1,200 ر.س (لشهر مايو)</li>
+                <li>تاريخ الاستحقاق: 2024-05-01</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="messages" class="page" style="display:none">
+      <div class="content">
+        <div class="card">
+          <h3 class="chart-title">الرسائل والإعلانات</h3>
+          <div class="grid">
+            <div class="card">
+              <h4>الرسائل الواردة</h4>
+              <ul class="bullets">
+                <li>ترحيب بمنتسبي الموسم الجديد</li>
+                <li>إعلان عن بطولة الصداقة</li>
+                <li>تذكير بموعد الجلسة</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>الإعلانات</h4>
+              <ul class="bullets">
+                <li>عرض خاص للاشتراكات السنوية</li>
+                <li>معسكر صيفي 2024</li>
+                <li>ورش عمل للأهالي</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="page" style="display:none">
+      <div class="content">
+        <div class="card">
+          <h3 class="chart-title">مركز خدمة العملاء</h3>
+          <div class="grid">
+            <div class="card">
+              <h4>الدعم الفني</h4>
+              <ul class="bullets">
+                <li>هاتف: 8001234567</li>
+                <li>بريد إلكتروني: support@basmah.com</li>
+                <li>ساعات العمل: 8 ص - 8 م</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>الأسئلة الشائعة</h4>
+              <ul class="bullets">
+                <li>كيفية تغيير موعد الجلسات؟</li>
+                <li>طريقة دفع الاشتراكات</li>
+                <li>سياسة الإلغاء والاسترجاع</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="settings" class="page" style="display:none">
+      <div class="content">
+        <div class="card">
+          <h3 class="chart-title">الإعدادات</h3>
+          <div class="grid">
+            <div class="card">
+              <h4>الإعدادات الشخصية</h4>
+              <ul class="bullets">
+                <li>معلومات الحساب</li>
+                <li>إعدادات الإشعارات</li>
+                <li>تغيير كلمة المرور</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>إعدادات العائلة</h4>
+              <ul class="bullets">
+                <li>إدارة الملفات الشخصية</li>
+                <li>تفضيلات التواصل</li>
+                <li>صلاحيات الوصول</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/parent.js"></script>
+<script>initLayout('overview');</script>
+</body>
+</html>

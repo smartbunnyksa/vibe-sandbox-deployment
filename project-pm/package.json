@@ -1,0 +1,27 @@
+{
+  "name": "basmah-academy-fullstack",
+  "version": "1.0.0",
+  "description": "Basmah Academy - Full Stack Sports Management Platform",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd web && live-server --port=3000 --open",
+    "build": "cd backend && npm install",
+    "start": "cd backend && npm start",
+    "deploy": "npm run build"
+  },
+  "keywords": [
+    "sports",
+    "academy",
+    "management",
+    "arabic",
+    "fullstack"
+  ],
+  "author": "Smart Bunny KSA",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "live-server": "^1.2.2"
+  }
+}

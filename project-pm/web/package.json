@@ -1,0 +1,22 @@
+{
+  "name": "basmah-academy-frontend",
+  "version": "1.0.0",
+  "description": "Basmah Academy Frontend - Sports Management Platform",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Frontend build completed'",
+    "start": "python -m http.server 3000",
+    "dev": "python -m http.server 3000"
+  },
+  "keywords": [
+    "sports",
+    "academy",
+    "management",
+    "arabic",
+    "frontend"
+  ],
+  "author": "Smart Bunny KSA",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>بصمة لاعب — سوبر أدمن</title>
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-theme="dark">
+  <div class="layout container">
+    <aside>
+      <div class="brand">
+<img src="assets/images/logo-dark.svg" class="brand-logo" alt="بصمة لاعب" loading="lazy">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#dashboard" class="active">نظرة عامة</a></li>
+          <li><a href="#branches">إدارة الفروع</a></li>
+          <li><a href="#branchesPerf">أداء الفروع</a></li>
+          <li><a href="#users">إدارة المستخدمين والصلاحيات</a></li>
+          <li><a href="#policies">السياسات والأحكام</a></li>
+          <li><a href="#seasons">المواسم والفعاليات</a></li>
+          <li><a href="#bi">تحليلات الأعمال</a></li>
+          <li><a href="#finance">الإيرادات والمصروفات</a></li>
+          <li><a href="#sports">الأداء الرياضي العام</a></li>
+          <li><a href="#library">مراجع تدريبية</a></li>
+          <li><a href="#plans">إدارة الأسعار والاشتراكات</a></li>
+          <li><a href="#support">مركز خدمة العملاء</a></li>
+          <li><a href="#integrations">التكاملات وواجهات الربط</a></li>
+          <li><a href="#reports">التقارير</a></li>
+          <li><a href="#messages">الرسائل والإعلانات</a></li>
+          <li><a href="#settings">الإعدادات</a></li>
+        </ul>
+      </nav>
+      <a class="logout" href="index.html">تسجيل الخروج</a>
+    </aside>
+
+    <main>
+      <header>
+        <h2 class="title">لوحة — سوبر أدمن</h2>
+        <div class="header-actions">
+          <button class="btn" id="btn-add-branch">+ إضافة فرع</button>
+          <button class="btn secondary" id="themeToggle">تبديل الثيم</button>
+        </div>
+      </header>
+
+      <section id="dashboard" class="page">
+        <div class="content">
+          <div class="kpis">
+            <div class="card kpi"><div class="icon">🏢</div><div class="meta"><span class="value" id="kpi-branches">4</span><span class="label">عدد الفروع</span></div></div>
+            <div class="card kpi"><div class="icon">🧑‍🎓</div><div class="meta"><span class="value" id="kpi-players">568</span><span class="label">اللاعبون</span></div></div>
+            <div class="card kpi"><div class="icon">💰</div><div class="meta"><span class="value" id="kpi-revenue">285,000 ر.س</span><span class="label">الإيرادات</span></div></div>
+          </div>
+          <div class="card table-card">
+            <div class="title-row"><h3 class="chart-title">ملخص الفروع</h3></div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th>الاسم</th><th>المدينة</th><th>الحالة</th><th>السعة</th><th>مدير الفرع</th><th>الجوال</th><th>إجراء</th></tr>
+                </thead>
+                <tbody id="tbl-branches">
+                  <tr><td>الفرع الرئيسي</td><td>الرياض</td><td><span class="badge success">نشط</span></td><td>200</td><td>علي محمد</td><td>0550123456</td><td><button class="btn small">تعديل</button></td></tr>
+                  <tr><td>فرع جدة</td><td>جدة</td><td><span class="badge success">نشط</span></td><td>150</td><td>سعيد أحمد</td><td>0550123457</td><td><button class="btn small">تعديل</button></td></tr>
+                  <tr><td>فرع الدمام</td><td>الدمام</td><td><span class="badge success">نشط</span></td><td>120</td><td>خالد سليمان</td><td>0550123458</td><td><button class="btn small">تعديل</button></td></tr>
+                  <tr><td>فرع مكة</td><td>مكة</td><td><span class="badge warning">قيد التجهيز</span></td><td>100</td><td>-</td><td>-</td><td><button class="btn small">تعديل</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="branchesPerf" class="page" style="display:none">
+        <div class="content">
+          <div class="kpis">
+            <div class="card kpi"><div class="icon">💵</div><div class="meta"><span class="value" id="kpi-perf-rev">285,000 ر.س</span><span class="label">إجمالي الإيراد (النطاق)</span></div></div>
+            <div class="card kpi"><div class="icon">👥</div><div class="meta"><span class="value" id="kpi-perf-active">512</span><span class="label">متوسط اللاعبين النشطين</span></div></div>
+            <div class="card kpi"><div class="icon">⭐</div><div class="meta"><span class="value" id="kpi-perf-rating">4.6</span><span class="label">متوسط التقييم</span></div></div>
+          </div>
+
+          <div class="card">
+            <div class="title-row">
+              <h3 class="chart-title">اختيار الفرع — <span id="perf-range-label">آخر 7 أيام</span></h3>
+              <div>
+                <select id="perf-branch" class="select">
+                  <option value="all">جميع الفروع</option>
+                  <option value="1">الفرع الرئيسي</option>
+                  <option value="2">فرع جدة</option>
+                  <option value="3">فرع الدمام</option>
+                </select>
+                <select id="perf-range" class="select">
+                  <option value="7">7 أيام</option>
+                  <option value="30">30 يوم</option>
+                  <option value="90">90 يوم</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid">
+              <div class="card"><h3 class="chart-title">الإيرادات</h3><div class="chart-placeholder">رسم بياني للإيرادات</div></div>
+              <div class="card"><h3 class="chart-title">نسبة التذاكر</h3><div class="chart-placeholder">رسم بياني للتذاكر</div></div>
+              <div class="card"><h3 class="chart-title">اللاعبون النشطون</h3><div class="chart-placeholder">رسم بياني للنشطين</div></div>
+              <div class="card"><h3 class="chart-title">متوسط التقييم</h3><div class="chart-placeholder">رسم بياني للتقييم</div></div>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="title-row"><h3 class="chart-title">جدول النطاق المختار</h3></div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th>التاريخ</th><th>الإيرادات</th><th>نشطون</th><th>متوسط تقييم</th><th>تذاكر مفتوحة</th><th>مغلقة</th><th>اشتراكات جديدة</th></tr>
+                </thead>
+                <tbody id="tbl-perf">
+                  <tr><td>2024-04-14</td><td>8,500 ر.س</td><td>512</td><td>4.6</td><td>12</td><td>8</td><td>5</td></tr>
+                  <tr><td>2024-04-13</td><td>7,800 ر.س</td><td>508</td><td>4.5</td><td>15</td><td>10</td><td>3</td></tr>
+                  <tr><td>2024-04-12</td><td>9,200 ر.س</td><td>515</td><td>4.7</td><td>8</td><td>12</td><td>7</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="branches" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">إدارة الفروع</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الفروع النشطة</h4>
+                <ul class="bullets">
+                  <li>الفرع الرئيسي - الرياض - 200 لاعب</li>
+                  <li>فرع جدة - جدة - 150 لاعب</li>
+                  <li>فرع الدمام - الدمام - 120 لاعب</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الفروع قيد التجهيز</h4>
+                <ul class="bullets">
+                  <li>فرع مكة - مكة - 100 لاعب (متوقع)</li>
+                  <li>فرع المدينة - المدينة - 80 لاعب (متوقع)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="users" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">إدارة المستخدمين والصلاحيات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>المستخدمين</h4>
+                <ul class="bullets">
+                  <li>المديرين: 8</li>
+                  <li>المدربين: 25</li>
+                  <li>الموظفين: 15</li>
+                  <li>الأهالي: 420</li>
+                  <li>اللاعبين: 568</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>صلاحيات النظام</h4>
+                <ul class="bullets">
+                  <li>إدارة الفروع</li>
+                  <li>إدارة المستخدمين</li>
+                  <li>إعدادات النظام</li>
+                  <li>تقارير الأداء</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="policies" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">السياسات والأحكام</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>السياسات العامة</h4>
+                <ul class="bullets">
+                  <li>سياسة الخصوصية</li>
+                  <li>شروط الاستخدام</li>
+                  <li>سياسة الإلغاء والاسترجاع</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الأحكام التنظيمية</h4>
+                <ul class="bullets">
+                  <li>نظام العضويات</li>
+                  <li>لوائح التدريب</li>
+                  <li>معايير الجودة</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="seasons" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">المواسم والفعاليات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>المواسم النشطة</h4>
+                <ul class="bullets">
+                  <li>ربيع 2024 - 568 لاعب</li>
+                  <li>شتاء 2023 - 485 لاعب</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الفعاليات القادمة</h4>
+                <ul class="bullets">
+                  <li>بطولة الصداقة - مايو 2024</li>
+                  <li>معسكر صيفي - يونيو 2024</li>
+                  <li>دورة تدريبية - يوليو 2024</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="bi" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">تحليلات الأعمال</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>مؤشرات الأداء</h4>
+                <ul class="bullets">
+                  <li>معدل النمو: +15%</li>
+                  <li>معدل الاحتفاظ: 88%</li>
+                  <li>رضا العملاء: 94%</li>
+                  <li>العائد على الاستثمار: 32%</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>التوقعات</h4>
+                <ul class="bullets">
+                  <li>التوقعات السنوية: 3.4M ر.س</li>
+                  <li>نمو المشتركين: +20%</li>
+                  <li>توسع الفروع: +2 فروع جديدة</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="finance" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">الإيرادات والمصروفات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الإيرادات</h4>
+                <ul class="bullets">
+                  <li>الإيراد الشهري: 285,000 ر.س</li>
+                  <li>الإيراد السنوي: 3.42M ر.س</li>
+                  <li>نمو الإيرادات: +18%</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>المصروفات</h4>
+                <ul class="bullets">
+                  <li>رواتب: 120,000 ر.س</li>
+                  <li>تشغيل: 45,000 ر.س</li>
+                  <li>تسويق: 20,000 ر.س</li>
+                  <li>صافي الربح: 100,000 ر.س</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sports" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">الأداء الرياضي العام</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>إحصائيات الأداء</h4>
+                <ul class="bullets">
+                  <li>متوسط التقييم: 4.6/5</li>
+                  <li>معدل الحضور: 89%</li>
+                  <li>نمو المهارات: +22%</li>
+                  <li>تحسن اللياقة: +18%</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الإنجازات</h4>
+                <ul class="bullets">
+                  <li>15 بطولة محلية</li>
+                  <li>8 بطولات إقليمية</li>
+                  <li>3 بطولات وطنية</li>
+                  <li>12 لاعب في المنتخبات</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="library" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">المراجع التدريبية</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>البرامج التدريبية</h4>
+                <ul class="bullets">
+                  <li>12 برنامج تدريبي</li>
+                  <li>45 خطة تدريبية</li>
+                  <li>28 دورة تطويرية</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>المحتوى التعليمي</h4>
+                <ul class="bullets">
+                  <li>120 فيديو تدريبي</li>
+                  <li>65 عرض تقديمي</li>
+                  <li>38 دليل تدريبي</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="plans" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">إدارة الأسعار والاشتراكات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>باقات الاشتراك</h4>
+                <ul class="bullets">
+                  <li>شهري: 600 ر.س</li>
+                  <li>ربع سنوي: 1,650 ر.س</li>
+                  <li>سنوي: 6,000 ر.س</li>
+                  <li>عائلي: 1,000 ر.س</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الإحصائيات</h4>
+                <ul class="bullets">
+                  <li>أكثر الباقات شيوعاً: شهري (65%)</li>
+                  <li>معدل التجديد: 88%</li>
+                  <li>قيمة العمر الافتراضي: 2.5 سنة</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">مركز خدمة العملاء</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>إحصائيات الدعم</h4>
+                <ul class="bullets">
+                  <li>التذاكر المفتوحة: 27</li>
+                  <li>معدل الرد: 2.1 ساعة</li>
+                  <li>معدل الرضا: 92%</li>
+                  <li>المكالمات اليومية: 45</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>مؤشرات الجودة</h4>
+                <ul class="bullets">
+                  <li>معدل الحل من أول مرة: 78%</li>
+                  <li>وقت الحل المتوسط: 4.2 ساعة</li>
+                  <li>معدل التصعيد: 12%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="integrations" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">التكاملات وواجهات الربط</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>التكاملات النشطة</h4>
+                <ul class="bullets">
+                  <li>نظام الدفع الإلكتروني</li>
+                  <li>منصة التواصل</li>
+                  <li>أنظمة المحاسبة</li>
+                  <li>أنظمة CRM</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>واجهات الربط</h4>
+                <ul class="bullets">
+                  <li>API للبيانات</li>
+                  <li>واجهة للإحصائيات</li>
+                  <li>نظام الإشعارات</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reports" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">التقارير والإحصائيات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>التقارير المتاحة</h4>
+                <ul class="bullets">
+                  <li>تقارير مالية شهرية</li>
+                  <li>تقارير أداء الفروع</li>
+                  <li>تقارير رضا العملاء</li>
+                  <li>تقارير الأداء الرياضي</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>التقارير التخصصية</h4>
+                <ul class="bullets">
+                  <li>تقرير النمو والتحليل</li>
+                  <li>تقرير التنبؤ بالأداء</li>
+                  <li>تقرير التحليل التنافسي</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="messages" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">الرسائل والإعلانات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الحملات النشطة</h4>
+                <ul class="bullets">
+                  <li>حملة ترحيب باللاعبين الجدد</li>
+                  <li>حملة تجديد الاشتراكات</li>
+                  <li>حملة البطولة القادمة</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الإحصائيات</h4>
+                <ul class="bullets">
+                  <li>معدل الفتح: 78%</li>
+                  <li>معدل النقر: 23%</li>
+                  <li>معدل التحويل: 8%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="settings" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">إعدادات النظام</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الإعدادات العامة</h4>
+                <ul class="bullets">
+                  <li>إعدادات النظام الأساسية</li>
+                  <li>إعدادات الأمان</li>
+                  <li>إعدادات النسخ الاحتياطي</li>
+                  <li>إعدادات التحديثات</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>إعدادات متقدمة</h4>
+                <ul class="bullets">
+                  <li>إعدادات قاعدة البيانات</li>
+                  <li>إعدادات الخادم</li>
+                  <li>إعدادات الأداء</li>
+                  <li>إعدادات المراقبة</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal for adding/editing branches -->
+  <div id="branchModal" class="modal-backdrop" style="display:none">
+    <div class="modal">
+      <header>
+        <h3 id="modalTitle">إضافة فرع جديد</h3>
+        <button class="btn small" onclick="closeModal()">✕</button>
+      </header>
+      <div class="body">
+        <form id="branchForm" class="form-grid">
+          <div>
+            <label class="lbl">اسم الفرع</label>
+            <input type="text" id="branchName" class="input" required>
+          </div>
+          <div>
+            <label class="lbl">المدينة</label>
+            <input type="text" id="branchCity" class="input" required>
+          </div>
+          <div>
+            <label class="lbl">الحالة</label>
+            <select id="branchStatus" class="select" required>
+              <option value="نشط">نشط</option>
+              <option value="مغلق">مغلق</option>
+              <option value="قيد التجهيز">قيد التجهيز</option>
+            </select>
+          </div>
+          <div>
+            <label class="lbl">السعة</label>
+            <input type="number" id="branchCapacity" class="input" required>
+          </div>
+          <div>
+            <label class="lbl">مدير الفرع</label>
+            <input type="text" id="branchManager" class="input" required>
+          </div>
+          <div>
+            <label class="lbl">رقم الجوال</label>
+            <input type="tel" id="branchPhone" class="input" required>
+          </div>
+        </form>
+      </div>
+      <footer>
+        <button class="btn secondary" onclick="closeModal()">إلغاء</button>
+        <button class="btn" onclick="saveBranch()">حفظ</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <section id="charts" class="page">
+    <div class="content">
+      <h3 class="chart-title">إحصائيات الفروع</h3>
+      <canvas id="branchChart" width="400" height="200"></canvas>
+      <h3 class="chart-title">إيرادات الفروع</h3>
+      <canvas id="revenueChart" width="400" height="200"></canvas>
+      <h3 class="chart-title">عدد اللاعبين</h3>
+      <canvas id="playersChart" width="400" height="200"></canvas>
+    </div>
+  </section>
+
+  <script src="assets/js/layout.js"></script>
+  <script type="module" src="assets/js/superadmin.js"></script>
+  <script>initLayout('dashboard');</script>
+</body>
+</html>

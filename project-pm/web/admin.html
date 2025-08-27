@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>بصمة لاعب — مدير الفرع</title>
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-theme="dark">
+  <div class="layout container">
+    <aside>
+<div class="brand"><img src="assets/images/logo-dark.svg" class="brand-logo" alt="بصمة لاعب" loading="lazy"><h1>بصمة لاعب</h1></div>
+      <nav>
+        <ul>
+          <li><a href="#dashboard" class="active">نظرة عامة</a></li>
+          <li><a href="#groups">المجموعات</a></li>
+          <li><a href="#seasons">المواسم والفعاليات</a></li>
+          <li><a href="#library">مراجع تدريبية</a></li>
+          <li><a href="#coaches">المدربون</a></li>
+          <li><a href="#players">اللاعبون</a></li>
+          <li><a href="#subs">الاشتراكات والمدفوعات</a></li>
+          <li><a href="#support">مركز خدمة العملاء</a></li>
+          <li><a href="#reports">التقارير</a></li>
+          <li><a href="#messages">الرسائل والإعلانات</a></li>
+          <li><a href="#settings">الإعدادات</a></li>
+        </ul>
+      </nav>
+      <a class="logout" href="index.html">تسجيل الخروج</a>
+    </aside>
+
+    <main>
+      <header>
+        <h2 class="title">لوحة — مدير الفرع</h2>
+        <div class="header-actions"><button class="btn secondary" id="themeToggle">تبديل الثيم</button></div>
+      </header>
+
+      <section id="dashboard" class="page">
+        <div class="content">
+          <div class="kpis">
+            <div class="card kpi"><div class="icon">👥</div><div class="meta"><span class="value" id="a-kpi-members">142</span><span class="label">المشتركين</span></div></div>
+            <div class="card kpi"><div class="icon">💳</div><div class="meta"><span class="value" id="a-kpi-dues">23,500 ر.س</span><span class="label">فواتير مستحقة</span></div></div>
+            <div class="card kpi"><div class="icon">📅</div><div class="meta"><span class="value" id="a-kpi-sessions">28</span><span class="label">جلسات هذا الأسبوع</span></div></div>
+          </div>
+          <div class="card table-card">
+            <div class="title-row"><h3 class="chart-title">جدول المجموعات</h3></div>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>المجموعة</th><th>المدرب</th><th>الأيام</th><th>الساعة</th><th>الحالة</th></tr></thead>
+                <tbody id="a-tbl">
+                  <tr><td>الناشئين أ</td><td>أحمد السعدي</td><td>أحد، ثلاثاء، خميس</td><td>5:00 م</td><td><span class="badge success">نشط</span></td></tr>
+                  <tr><td>الأولاد ب</td><td>محمد القحطاني</td><td>اثنين، أربعاء</td><td>4:30 م</td><td><span class="badge success">نشط</span></td></tr>
+                  <tr><td>الكبار</td><td>خالد الفهد</td><td>جمعة، سبت</td><td>6:00 م</td><td><span class="badge warning">متوقف مؤقت</span></td></tr>
+                  <tr><td>المبتدئين</td><td>سعيد الحربي</td><td>أحد، ثلاثاء</td><td>3:30 م</td><td><span class="badge success">نشط</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="groups" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">إدارة المجموعات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>المجموعات النشطة</h4>
+                <ul class="bullets">
+                  <li>الناشئين أ - 25 لاعب</li>
+                  <li>الأولاد ب - 18 لاعب</li>
+                  <li>المبتدئين - 15 لاعب</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>إحصائيات الحضور</h4>
+                <ul class="bullets">
+                  <li>متوسط الحضور: 85%</li>
+                  <li>أعلى مجموعة حضور: الناشئين أ (92%)</li>
+                  <li>أدنى مجموعة حضور: المبتدئين (78%)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="seasons" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">المواسم والفعاليات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الموسم الحالي: ربيع 2024</h4>
+                <p>تاريخ البدء: 2024-03-01</p>
+                <p>تاريخ الانتهاء: 2024-06-30</p>
+                <p>عدد المشاركين: 84 لاعب</p>
+              </div>
+              <div class="card">
+                <h4>الفعاليات القادمة</h4>
+                <ul class="bullets">
+                  <li>بطولة الصداقة - 2024-05-15</li>
+                  <li>معسكر تدريبي - 2024-06-01</li>
+                  <li>حفل نهاية الموسم - 2024-06-28</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="library" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">المراجع التدريبية</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>برامج تدريبية</h4>
+                <ul class="bullets">
+                  <li>برنامج تطوير المهارات الأساسية</li>
+                  <li>برنامج اللياقة البدنية للناشئين</li>
+                  <li>برنامج التكتيكات المتقدمة</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>المواد التعليمية</h4>
+                <ul class="bullets">
+                  <li>دليل المدرب - الإصدار 3.2</li>
+                  <li>كتيب التغذية الرياضية</li>
+                  <li>فيديوهات تدريبية</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="coaches" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">إدارة المدربين</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>فريق المدربين</h4>
+                <ul class="bullets">
+                  <li>أحمد السعدي - مدرب الناشئين</li>
+                  <li>محمد القحطاني - مدرب الأولاد</li>
+                  <li>سعيد الحربي - مدرب المبتدئين</li>
+                  <li>خالد الفهد - مدرب الكبار</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>إحصائيات الأداء</h4>
+                <ul class="bullets">
+                  <li>أحمد السعدي: تقييم 4.8/5</li>
+                  <li>محمد القحطاني: تقييم 4.6/5</li>
+                  <li>سعيد الحربي: تقييم 4.7/5</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="players" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">إدارة اللاعبين</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>إحصائيات اللاعبين</h4>
+                <ul class="bullets">
+                  <li>إجمالي اللاعبين: 142</li>
+                  <li>لاعبين نشطين: 125</li>
+                  <li>لاعبين جدد هذا الشهر: 18</li>
+                  <li>لاعبين متوقفين: 17</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>توزيع الأعمار</h4>
+                <ul class="bullets">
+                  <li>تحت 12 سنة: 45 لاعب</li>
+                  <li>12-15 سنة: 58 لاعب</li>
+                  <li>16-18 سنة: 32 لاعب</li>
+                  <li>فوق 18 سنة: 7 لاعب</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="subs" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">الاشتراكات والمدفوعات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الإيرادات</h4>
+                <ul class="bullets">
+                  <li>الإيراد الشهري: 85,000 ر.س</li>
+                  <li>المستحقات: 23,500 ر.س</li>
+                  <li>المدفوعات المتأخرة: 8,200 ر.س</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>أنواع الاشتراكات</h4>
+                <ul class="bullets">
+                  <li>اشتراك شهري: 600 ر.س</li>
+                  <li>اشتراك ربع سنوي: 1,650 ر.س</li>
+                  <li>اشتراك سنوي: 6,000 ر.س</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">مركز خدمة العملاء</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>التذاكر المفتوحة</h4>
+                <ul class="bullets">
+                  <li>تذاكر جديدة: 5</li>
+                  <li>قيد المعالجة: 12</li>
+                  <li>مغلقة هذا الأسبوع: 23</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>أوقات الاستجابة</h4>
+                <ul class="bullets">
+                  <li>متوسط وقت الرد: 2.3 ساعة</li>
+                  <li>معدل الرضا: 92%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reports" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">التقارير والإحصائيات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>التقارير المتاحة</h4>
+                <ul class="bullets">
+                  <li>تقرير الحضور الشهري</li>
+                  <li>تقرير الإيرادات</li>
+                  <li>تقرير أداء المدربين</li>
+                  <li>تقرير تقدم اللاعبين</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>إحصائيات الأداء</h4>
+                <ul class="bullets">
+                  <li>نمو المشتركين: +15%</li>
+                  <li>معدل الاحتفاظ: 88%</li>
+                  <li>رضا العملاء: 94%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="messages" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">الرسائل والإعلانات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الرسائل الأخيرة</h4>
+                <ul class="bullets">
+                  <li>ترحيب باللاعبين الجدد - 2024-04-15</li>
+                  <li>تذكير بالمدفوعات - 2024-04-10</li>
+                  <li>إعلان البطولة القادمة - 2024-04-05</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الإعلانات المجدولة</h4>
+                <ul class="bullets">
+                  <li>معسكر الصيف - 2024-06-01</li>
+                  <li>عرض خاص للاشتراكات - 2024-05-01</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="settings" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">إعدادات النظام</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الإعدادات العامة</h4>
+                <ul class="bullets">
+                  <li>إعدادات الإشعارات</li>
+                  <li>إعدادات التقارير</li>
+                  <li>إعدادات النظام</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>إعدادات الأمان</h4>
+                <ul class="bullets">
+                  <li>إدارة الصلاحيات</li>
+                  <li>سجلات الدخول</li>
+                  <li>نسخ احتياطي</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/layout.js"></script>
+  <script type="module" src="assets/js/admin.js"></script>
+  <script>initLayout('dashboard');</script>
+</body>
+</html>

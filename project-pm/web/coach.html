@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>بصمة لاعب — المدرب</title>
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body data-theme="dark">
+  <div class="layout container">
+    <aside>
+      <div class="brand">
+        <img src="assets/images/logo-dark.svg" class="brand-logo" alt="بصمة لاعب" loading="lazy">
+        <h1>بصمة لاعب</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#dashboard" class="active">نظرة عامة</a></li>
+          <li><a href="#groups">المجموعات</a></li>
+          <li><a href="#seasons">المواسم والفعاليات</a></li>
+          <li><a href="#players">اللاعبين</a></li>
+          <li><a href="#schedule">الجدول والحصص</a></li>
+          <li><a href="#evals">تقييم اللاعبين</a></li>
+          <li><a href="#library">مراجع تدريبية</a></li>
+          <li><a href="#support">مركز خدمة العملاء</a></li>
+          <li><a href="#reports">التقارير</a></li>
+          <li><a href="#messages">الرسائل والإعلانات</a></li>
+          <li><a href="#settings">الإعدادات</a></li>
+        </ul>
+      </nav>
+      <a class="logout" href="index.html">تسجيل الخروج</a>
+    </aside>
+
+    <main>
+      <header>
+        <div><h2 class="title">لوحة — المدرب</h2></div>
+        <div class="header-actions"><button class="btn secondary" id="themeToggle">تبديل الثيم</button></div>
+      </header>
+
+      <section id="dashboard" class="page">
+        <div class="content">
+          <div class="kpis">
+            <div class="card kpi"><div class="icon">🧑‍🎓</div><div class="meta"><span class="value" id="kpi-my-players">25</span><span class="label">لاعبون تحت إشرافي</span></div></div>
+            <div class="card kpi"><div class="icon">📅</div><div class="meta"><span class="value" id="kpi-week-sessions">8</span><span class="label">جلسات هذا الأسبوع</span></div></div>
+            <div class="card kpi"><div class="icon">⭐</div><div class="meta"><span class="value" id="kpi-pending-evals">3</span><span class="label">تقييمات معلّقة</span></div></div>
+          </div>
+
+          <div class="grid">
+            <div class="card">
+              <h3 class="chart-title">تنبيهات</h3>
+              <ul class="bullets" id="alerts-list">
+                <li>جلسة تدريبية غداً الساعة 5:00 م</li>
+                <li>3 تقييمات تحتاج المراجعة</li>
+                <li>لاعب جديد انضم للمجموعة</li>
+              </ul>
+            </div>
+
+            <div class="card table-card">
+              <div class="title-row">
+                <h3 class="chart-title">جلسات اليوم</h3>
+                <button class="btn secondary small">+ جلسة</button>
+              </div>
+              <div class="table-scroll">
+                <table>
+                  <thead><tr><th>الوقت</th><th>المجموعة</th><th>النوع</th><th>المدة</th><th>إجراء</th></tr></thead>
+                  <tbody id="tbl-today">
+                    <tr><td>5:00 م</td><td>الناشئين أ</td><td>تدريب مهارات</td><td>90 دقيقة</td><td><button class="btn small">بدء</button></td></tr>
+                    <tr><td>6:30 م</td><td>الناشئين أ</td><td>تدريب بدني</td><td>60 دقيقة</td><td><button class="btn small">بدء</button></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="card table-card">
+            <div class="title-row"><h3 class="chart-title">ملخص اللاعبين (تحت إشرافي)</h3></div>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>اللاعب</th><th>المجموعة</th><th>آخر RPE</th><th>حمل أسبوعي</th><th>حالة</th></tr></thead>
+                <tbody id="tbl-players">
+                  <tr><td>محمد أحمد</td><td>الناشئين أ</td><td>7</td><td>3200</td><td><span class="badge success">نشط</span></td></tr>
+                  <tr><td>علي سعيد</td><td>الناشئين أ</td><td>6</td><td>2850</td><td><span class="badge success">نشط</span></td></tr>
+                  <tr><td>خالد محمد</td><td>الناشئين أ</td><td>8</td><td>3500</td><td><span class="badge warning">مرهق</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="groups" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">المجموعات تحت إشرافي</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الناشئين أ</h4>
+                <ul class="bullets">
+                  <li>25 لاعب</li>
+                  <li>3 جلسات أسبوعياً</li>
+                  <li>معدل حضور: 92%</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الأولاد ب</h4>
+                <ul class="bullets">
+                  <li>18 لاعب</li>
+                  <li>2 جلسات أسبوعياً</li>
+                  <li>معدل حضور: 85%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="seasons" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">المواسم والفعاليات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الموسم الحالي</h4>
+                <ul class="bullets">
+                  <li>ربيع 2024</li>
+                  <li>84 لاعب مشارك</li>
+                  <li>12 أسبوع تدريبي</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الفعاليات القادمة</h4>
+                <ul class="bullets">
+                  <li>بطولة الصداقة - 15 مايو</li>
+                  <li>معسكر تدريبي - 1 يونيو</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="players" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">إدارة اللاعبين</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>إحصائيات اللاعبين</h4>
+                <ul class="bullets">
+                  <li>إجمالي اللاعبين: 43</li>
+                  <li>لاعبين نشطين: 40</li>
+                  <li>متوسط العمر: 14 سنة</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>أداء اللاعبين</h4>
+                <ul class="bullets">
+                  <li>متوسط التقييم: 4.2/5</li>
+                  <li>أعلى تقييم: 4.8/5</li>
+                  <li>أدنى تقييم: 3.5/5</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">الجدول الأسبوعي</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>هذا الأسبوع</h4>
+                <ul class="bullets">
+                  <li>الأحد: تدريب مهارات - 5:00 م</li>
+                  <li>الثلاثاء: تدريب بدني - 5:00 م</li>
+                  <li>الخميس: مباراة تدريبية - 5:00 م</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الأسبوع القادم</h4>
+                <ul class="bullets">
+                  <li>الأحد: تدريب تكتيكي</li>
+                  <li>الثلاثاء: تدريب بدني</li>
+                  <li>الخميس: تقييم أداء</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="evals" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">تقييمات اللاعبين</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>التقييمات المعلقة</h4>
+                <ul class="bullets">
+                  <li>محمد أحمد - مهارات أساسية</li>
+                  <li>علي سعيد - لياقة بدنية</li>
+                  <li>خالد محمد - أداء تكتيكي</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>آخر التقييمات</h4>
+                <ul class="bullets">
+                  <li>أحمد خالد - 4.5/5</li>
+                  <li>سعد محمد - 4.2/5</li>
+                  <li>فهد علي - 4.0/5</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="library" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">المراجع التدريبية</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>برامج تدريبية</h4>
+                <ul class="bullets">
+                  <li>برنامج تطوير المهارات</li>
+                  <li>برنامج اللياقة البدنية</li>
+                  <li>برنامج التكتيكات</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>مواد تعليمية</h4>
+                <ul class="bullets">
+                  <li>فيديوهات تدريبية</li>
+                  <li>عروض تقديمية</li>
+                  <li>تمارين عملية</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">الدعم الفني</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>التذاكر المفتوحة</h4>
+                <ul class="bullets">
+                  <li>مشكلة في المعدات - قيد المعالجة</li>
+                  <li>استفسار عن البرنامج - تم الرد</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>الدعم السريع</h4>
+                <ul class="bullets">
+                  <li>الاتصال بالدعم: 8001234567</li>
+                  <li>البريد الإلكتروني: support@basmah.com</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reports" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">التقارير</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>تقارير الأداء</h4>
+                <ul class="bullets">
+                  <li>تقرير الحضور الشهري</li>
+                  <li>تقرير تقدم اللاعبين</li>
+                  <li>تقرير الجلسات التدريبية</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>إحصائيات</h4>
+                <ul class="bullets">
+                  <li>معدل الحضور: 89%</li>
+                  <li>متوسط RPE: 6.8</li>
+                  <li>نمو المهارات: +23%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="messages" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">الرسائل</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الرسائل الواردة</h4>
+                <ul class="bullets">
+                  <li>ترحيب من الإدارة</li>
+                  <li>تذكير بالاجتماع الأسبوعي</li>
+                  <li>إعلان عن دورة تدريبية</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>رسائل مجدولة</h4>
+                <ul class="bullets">
+                  <li>تذكير بالجلسة - غداً</li>
+                  <li>نشرة أسبوعية - الأحد</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="settings" class="page" style="display:none">
+        <div class="content">
+          <div class="card">
+            <h3 class="chart-title">الإعدادات</h3>
+            <div class="grid">
+              <div class="card">
+                <h4>الإعدادات الشخصية</h4>
+                <ul class="bullets">
+                  <li>معلومات الحساب</li>
+                  <li>إعدادات الإشعارات</li>
+                  <li>تغيير كلمة المرور</li>
+                </ul>
+              </div>
+              <div class="card">
+                <h4>إعدادات التدريب</h4>
+                <ul class="bullets">
+                  <li>تفضيلات الجدول</li>
+                  <li>إعدادات التقييم</li>
+                  <li>تخصيص التقارير</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/layout.js"></script>
+  <script type="module" src="assets/js/coach.js"></script>
+  <script>initLayout('dashboard');</script>
+</body>
+</html>
